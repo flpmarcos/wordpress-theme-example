@@ -1,0 +1,26 @@
+version: '3'
+services:
+  wp:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_PASSWORD: qwerty
+  mysql:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerty
+    volumes:
+      - my-datavolume:/var/lib/mysql
+volumes:
+  my-datavolume:
+
+
+# Subir docker
+# docker-compose up -d
+
+# Parar docker
+# docker-compose down
+
+# Rebuildar docker
+# docker-compose up -d --build
