@@ -1,7 +1,7 @@
 version: '3'
 services:
   wp:
-    build: .
+    image: "flpmarcos/wordpress-theme-example"
     ports:
       - "8000:80"
     environment:
@@ -11,10 +11,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: qwerty
     volumes:
-      - my-datavolume:/var/lib/mysql
+      - "my-datavolume:/var/lib/mysql"
 volumes:
   my-datavolume:
-
 
 # Subir docker
 # docker-compose up -d
